@@ -10,7 +10,7 @@ class HelloWorld(object):
 
     @cherrypy.expose
     def reload(self):
-        threading.Thread(target=cherrypy.engine.exit).start()
+        cherrypy.engine.exit()
         return "EXITING (PID: %d)" % os.getpid()
 
 
